@@ -103,7 +103,9 @@ export default function App() {
 		// checks if phantom wallet exists
     if (solana) {
       try {
-				// ADD DISCONNECT LOGIC HERE
+				// DISCONNECT LOGIC HERE
+        await solana.disconnect();
+        setWalletKey(undefined);
       } catch (err) {
           console.log(err);
       }
